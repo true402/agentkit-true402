@@ -1,0 +1,48 @@
+{
+  "name": "@true402.dev/agentkit",
+  "version": "0.1.0",
+  "description": "true402 actions for Coinbase AgentKit — pay-per-call on-chain rug/honeypot & address safety for Base AI agents over x402 (USDC, no account, no API key).",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "agentkit",
+    "coinbase-agentkit",
+    "action-provider",
+    "x402",
+    "base",
+    "rug-check",
+    "honeypot",
+    "token-safety",
+    "crypto",
+    "ai-agent",
+    "agent-tools",
+    "defi",
+    "web3"
+  ],
+  "homepage": "https://true402.dev",
+  "license": "MIT",
+  "dependencies": {
+    "viem": "^2.21.0",
+    "zod": "^3.23.0"
+  },
+  "peerDependencies": {
+    "@coinbase/agentkit": "0.10.4"
+  },
+  "devDependencies": {
+    "@coinbase/agentkit": "0.10.4",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
