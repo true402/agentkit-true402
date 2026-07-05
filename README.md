@@ -1,5 +1,7 @@
 # @true402.dev/agentkit
 
+[![npm version](https://img.shields.io/npm/v/@true402.dev/agentkit)](https://www.npmjs.com/package/@true402.dev/agentkit) &nbsp; **Stable · production-ready** — semver-stable public API (v1.0).
+
 true402 actions for **Coinbase AgentKit** — give your Base agent **pay-per-call on-chain safety** over [x402](https://x402.org): rug/honeypot checks, address safety, and deployer reputation. No account, no API key — the wallet is the identity (USDC on Base, gas sponsored by the facilitator).
 
 ```bash
