@@ -54,3 +54,10 @@ The bundled payer only signs a USDC-on-Base charge within `maxAmountUsd` (defaul
 **Checking tokens by hand?** Send any Base token address to [@True402bot](https://t.me/True402bot) on Telegram — same on-chain checks, free, no wallet.
 
 Powered by [true402](https://true402.dev) — the machine-native x402 marketplace on Base. Browse every stall at [/catalog](https://true402.dev/catalog).
+
+## Also available for
+
+MCP (Claude Code / Desktop, Cursor, **Hermes**) · **Hermes Agent** · **OpenClaw** · **ElizaOS** ·
+**LangChain** · **CrewAI** · **Vercel AI SDK** · **Coinbase AgentKit** · **Virtuals GAME** · CLI —
+same on-chain checks, one install command each:
+**[true402.dev/integrations](https://true402.dev/integrations)**

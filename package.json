@@ -1,6 +1,6 @@
 {
   "name": "@true402.dev/agentkit",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "true402 actions for Coinbase AgentKit \u2014 pay-per-call on-chain rug/honeypot & address safety for Base AI agents over x402 (USDC, no account, no API key).",
   "type": "module",
   "main": "dist/index.js",
@@ -26,7 +26,9 @@
     "ai-agent",
     "agent-tools",
     "defi",
-    "web3"
+    "web3",
+    "ai-agents",
+    "onchain-agent"
   ],
   "homepage": "https://true402.dev",
   "license": "MIT",
