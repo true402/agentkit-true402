@@ -51,4 +51,6 @@ No. This package uses the `customActionProvider` function form, not the `@Create
 **What stops a rogue endpoint from draining the payer?**
 The bundled payer only signs a USDC-on-Base charge within `maxAmountUsd` (default `$0.10`) and checks the payer balance first; anything else is refused.
 
+**Checking tokens by hand?** Send any Base token address to [@True402bot](https://t.me/True402bot) on Telegram — same on-chain checks, free, no wallet.
+
 Powered by [true402](https://true402.dev) — the machine-native x402 marketplace on Base. Browse every stall at [/catalog](https://true402.dev/catalog).

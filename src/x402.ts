@@ -19,7 +19,8 @@ export interface PayOpts {
   /**
    * Hard ceiling, in USDC, on a single signed payment (default 0.10). The client REFUSES to sign a 402
    * that demands more — so a rogue/compromised endpoint (or a MITM past TLS) can't drain the payer. The
-   * true402 stalls cost ~$0.003–0.015, so the default leaves headroom while blocking abuse.
+   * Most true402 stalls cost ~$0.003–0.04, so the default leaves headroom while blocking abuse.
+   * Note: the per-page SEO audit can exceed $0.10 for many pages — raise this to audit large batches.
    */
   maxAmountUsd?: number;
 }
