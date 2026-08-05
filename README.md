@@ -28,6 +28,8 @@ The agent can now call, before it trades:
 | `true402_token_report` | **Primary — pre-trade gate.** Composite **avoid / caution / ok** verdict for a Base ERC-20 (buy/sell honeypot sim + liquidity + ownership + deployer) | $0.01 |
 | `true402_token_safety` | Structural safety score 0–100 + flags | $0.005 |
 | `true402_address_safety` | Profile + risk for any address before you send/approve/call it (proxy detection) | $0.005 |
+| `true402_tx_preflight` | Check an **unsigned** transaction before signing: does it revert, does it grant an unlimited approval, has the counterparty been draining liquidity. Takes no key and no signature | $0.008 |
+| `true402_liquidity_history` | What already happened to a token's liquidity — every removal with amount/block/tx, plus the tokens drained in the same transaction | $0.005 |
 | `true402_deployer_check` | Deployer reputation — who made the token + their track record | $0.008 |
 
 These are built with AgentKit's `customActionProvider` (function form), so there are **no decorators and no tsconfig changes**. Each action's `invoke` ignores the `walletProvider` — payment is signed inside the bundled x402 payer using `payerPrivateKey` — and returns a JSON string.
