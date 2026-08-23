@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/@true402.dev/agentkit)](https://www.npmjs.com/package/@true402.dev/agentkit) &nbsp; **Stable · production-ready** — semver-stable public API (v1.0).
 
-true402 actions for **Coinbase AgentKit** — give your Base agent **pay-per-call on-chain safety** over [x402](https://x402.org): rug/honeypot checks, address safety, and deployer reputation. No account, no API key — the wallet is the identity (USDC on Base, gas sponsored by the facilitator).
+true402 actions for **Coinbase AgentKit** — give your Base agent **pay-per-call on-chain safety and search/SEO data** over [x402](https://x402.org): rug/honeypot checks, address safety, and deployer reputation, plus backlink profiles and keyword research. No account, no API key — the wallet is the identity (USDC on Base, gas sponsored by the facilitator).
 
 ```bash
 npm i @true402.dev/agentkit @coinbase/agentkit
@@ -31,10 +31,14 @@ The agent can now call, before it trades:
 | `true402_tx_preflight` | Check an **unsigned** transaction before signing: does it revert, does it grant an unlimited approval, has the counterparty been draining liquidity. Takes no key and no signature | $0.008 |
 | `true402_liquidity_history` | What already happened to a token's liquidity — every removal with amount/block/tx, plus the tokens drained in the same transaction | $0.005 |
 | `true402_deployer_check` | Deployer reputation — who made the token + their track record | $0.008 |
+| `true402_backlinks` | A domain's backlink profile — referring domains/pages, dofollow split, authority rank, spam score | $0.10 |
+| `true402_keyword_volume` | Search volume/CPC/competition for up to 200 keywords in **one** call — priced per call, not per keyword | $0.15 |
+| `true402_ranked_keywords` | Keywords a domain already ranks for, with position and the ranking URL — self-audit or competitor research | $0.05 |
+| `true402_keyword_ideas` | Related/long-tail keyword ideas for a seed term, with volume and search intent | $0.05 |
 
 These are built with AgentKit's `customActionProvider` (function form), so there are **no decorators and no tsconfig changes**. Each action's `invoke` ignores the `walletProvider` — payment is signed inside the bundled x402 payer using `payerPrivateKey` — and returns a JSON string.
 
-`payerPrivateKey` is a Base wallet holding a little USDC. Payments are signed with EIP-3009; the client **refuses to sign** anything that isn't USDC-on-Base or exceeds `maxAmountUsd` (default `0.10`). Safety stalls have a small free daily trial, so a call may return `200` without paying. Override `baseUrl` / `rpcUrl` in the options if self-hosting.
+`payerPrivateKey` is a Base wallet holding a little USDC. Payments are signed with EIP-3009; the client **refuses to sign** anything that isn't USDC-on-Base or exceeds `maxAmountUsd` (default `0.25`, above the server's own $0.20 per-request ceiling so a legitimately-priced stall is never blocked). Safety stalls have a small free daily trial, so a call may return `200` without paying. Override `baseUrl` / `rpcUrl` in the options if self-hosting.
 
 ## FAQ
 
@@ -51,7 +55,7 @@ No. The wallet is the identity. Payment is per-call over x402 (USDC on Base); th
 No. This package uses the `customActionProvider` function form, not the `@CreateAction` class form, so no decorator settings are required.
 
 **What stops a rogue endpoint from draining the payer?**
-The bundled payer only signs a USDC-on-Base charge within `maxAmountUsd` (default `$0.10`) and checks the payer balance first; anything else is refused.
+The bundled payer only signs a USDC-on-Base charge within `maxAmountUsd` (default `$0.25`) and checks the payer balance first; anything else is refused.
 
 **Checking tokens by hand?** Send any Base token address to [@True402bot](https://t.me/True402bot) on Telegram — same on-chain checks, free, no wallet.
 
