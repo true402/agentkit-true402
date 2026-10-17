@@ -1,7 +1,7 @@
 {
   "name": "@true402.dev/agentkit",
-  "version": "1.0.2",
-  "description": "true402 actions for Coinbase AgentKit \u2014 pay-per-call on-chain rug/honeypot & address safety for Base AI agents over x402 (USDC, no account, no API key).",
+  "version": "1.4.3",
+  "description": "true402 actions for Coinbase AgentKit — pay-per-call on-chain rug/honeypot & address safety plus backlink/keyword SEO data for Base AI agents over x402 (USDC, no account, no API key).",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -27,6 +27,9 @@
     "agent-tools",
     "defi",
     "web3",
+    "seo",
+    "backlinks",
+    "keyword-research",
     "ai-agents",
     "onchain-agent"
   ],
