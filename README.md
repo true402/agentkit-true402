@@ -61,6 +61,12 @@ The bundled payer only signs a USDC-on-Base charge within `maxAmountUsd` (defaul
 
 Powered by [true402](https://true402.dev) — the machine-native x402 marketplace on Base. Browse every stall at [/catalog](https://true402.dev/catalog).
 
+## Guides
+
+- [Rug-check tokens from a Coinbase AgentKit agent](https://true402.dev/guides/rug-check-coinbase-agentkit-agent)
+- [The x402 Bazaar: how agents discover paid APIs](https://true402.dev/guides/x402-bazaar)
+- [The x402 protocol, explained](https://true402.dev/guides/what-is-x402)
+
 ## Also available for
 
 MCP (Claude Code / Desktop, Cursor, **Hermes**) · **Hermes Agent** · **OpenClaw** · **ElizaOS** ·
