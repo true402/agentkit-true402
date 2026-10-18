@@ -71,7 +71,7 @@ export function createTrue402ActionProviders(opts: PayOpts) {
     description:
       'Pre-trade rug/honeypot gate for a Base ERC-20: a composite avoid/caution/ok verdict from an ' +
       'on-chain buy/sell honeypot simulation (proves sellability, not just a static scan), liquidity ' +
-      'depth, ownership/mint inspection, and deployer reputation. Call BEFORE buying a token. ~$0.01 USDC over x402.',
+      'depth, ownership/mint inspection, and recent rug activity. Call BEFORE buying a token. ~$0.008 USDC over x402.',
     schema: tokenSchema,
     invoke: async (_walletProvider, { token }) =>
       JSON.stringify(await payStall('/v1/base/token-report', { token }, opts)),
